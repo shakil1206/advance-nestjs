@@ -1,3 +1,4 @@
+import { GetCatByIdParamDto } from './cat.dto';
 import { Cat } from './cat.interface';
 import { Injectable } from '@nestjs/common';
 
@@ -10,5 +11,9 @@ export class CatService {
     }
     findAll(): Cat[] {
         return this.cats;
+    }
+    getById(catId: GetCatByIdParamDto): Cat {
+        const filterData = this.cats.filter(item => item.id === catId.id)
+        return filterData[0];
     }
 }
