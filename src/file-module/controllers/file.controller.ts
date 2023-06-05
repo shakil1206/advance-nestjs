@@ -47,13 +47,13 @@ export class FileController {
             throw new BadRequestException('Invalid file provided, [Image files allowed]');
         }
 
-        const buffer = file.stream;
+        // const buffer = file.stream;
         // const stream = getStream(file.buffer)
         // const res = {
         //     originalName: file.originalname,
         //     fileName: file.filename,
         // }
-        console.log(file, buffer);
+        // console.log(file, buffer);
         return file.filename
     }
 
@@ -67,17 +67,17 @@ export class FileController {
         fileFilter: imagefilefilter
     }))
     uploadMultipleFile(@UploadedFiles() files: Array<Express.Multer.File>) {
-        const res = [];
+        // const res = [];
 
-        files.map((file) => {
-            const fileres = {
-                originalName: file.originalname,
-                fileName: file.filename,
-            }
-            res.push(fileres)
-        })
+        // files.map((file) => {
+        //     const fileres = {
+        //         originalName: file.originalname,
+        //         fileName: file.filename,
+        //     }
+        //     res.push(fileres)
+        // })
         console.log(files);
-        return res
+        return 
     }
 
 
