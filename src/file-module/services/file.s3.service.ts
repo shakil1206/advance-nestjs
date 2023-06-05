@@ -3,7 +3,7 @@ import { S3 } from 'aws-sdk';
 
 
 @Injectable()
-export class FileService {
+export class FileS3Service {
     constructor() { }
 
     async uploadFile(imageBuffer: Buffer, fileName: string) {

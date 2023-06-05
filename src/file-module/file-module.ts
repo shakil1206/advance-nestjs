@@ -2,6 +2,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Module } from '@nestjs/common';
 import { FileController } from './controllers/file.controller';
 import { MulterModule } from '@nestjs/platform-express';
+import { UploadS3Service } from './services/upload.s3.service';
 
 
 @Module({
@@ -12,6 +13,6 @@ import { MulterModule } from '@nestjs/platform-express';
         })
     ],
     controllers: [FileController],
-    providers: [],
+    providers: [UploadS3Service],
 })
 export class FileModule { }
